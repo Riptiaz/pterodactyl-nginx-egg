@@ -4,9 +4,6 @@
 echo -e "[SETUP] Install packages"
 apt-get update -qq > /dev/null 2>&1 && apt-get install -qq > /dev/null 2>&1 -y git wget php php-sqlite3 php-xml perl perl-doc fcgiwrap unzip jq
 
-# Add VERSION file
-wget -q -O - https://api.tavuru.de/version/Ym0T/pterodactyl-nginx-egg | grep -o '"version":"[^"]*"' | cut -d'"' -f4 | head -1 > /mnt/server/VERSION
-
 # Change to server directory
 cd /mnt/server || { echo "[ERROR] Failed to access /mnt/server"; exit 1; }
 
